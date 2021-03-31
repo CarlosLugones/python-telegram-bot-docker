@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bot:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+    volumes:
+      - "/codebase:/codebase"
+      - "/storage:/storage"
+    restart: always
